@@ -1,8 +1,39 @@
 @import "tailwindcss";
 
+/*
+ * ============================================
+ * CENTRALIZED COLOR SYSTEM
+ * ============================================
+ * 
+ * All brand colors are defined here. Change the values below
+ * to update colors across the entire website.
+ * 
+ * Primary: Main brand color (navy blue)
+ * Accent: Secondary color for CTAs and highlights (gold/amber)
+ * Background: Page background color (off-white)
+ * Border: Border color (light blue)
+ * 
+ * All components use CSS variables, so changing values here
+ * will automatically update the entire site.
+ */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Brand Colors - Change these values to update colors site-wide */
+  --color-primary: #1e3a8a;        /* Navy Blue - Primary brand color */
+  --color-primary-light: #3b82f6;  /* Lighter blue for borders/hover */
+  --color-primary-dark: #1e40af;   /* Darker blue for backgrounds */
+  --color-primary-lighter: #dbeafe; /* Very light blue for text on dark bg */
+  
+  --color-accent: #d97706;         /* Gold/Amber - Accent color for CTAs */
+  --color-accent-light: #f59e0b;   /* Lighter amber */
+  --color-accent-dark: #b45309;    /* Darker amber for hover */
+  --color-accent-lighter: #fef3c7; /* Very light amber */
+  
+  --color-background: #fafafa;     /* Off-white background */
+  --color-border: #bfdbfe;         /* Light blue border */
 }
 
 @theme inline {
@@ -10,6 +41,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Map brand colors to Tailwind */
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-lighter: var(--color-primary-lighter);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-accent-lighter: var(--color-accent-lighter);
+  --color-brand-bg: var(--color-background);
+  --color-brand-border: var(--color-border);
 }
 
 @media (prefers-color-scheme: dark) {

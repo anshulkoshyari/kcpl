@@ -2,7 +2,7 @@
 
 export function ContactForm() {
   return (
-    <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-700">
+    <section className="rounded-2xl border border-[var(--color-brand-border)] bg-[var(--color-brand-bg)] p-5 text-sm text-slate-700">
       <form
         className="space-y-4"
         onSubmit={(event) => {
@@ -24,7 +24,7 @@ export function ContactForm() {
               id="name"
               name="name"
               required
-              className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none ring-0 transition focus:border-slate-900"
+              className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none ring-0 transition focus:border-[var(--color-primary)]"
               placeholder="Your full name"
             />
           </div>
@@ -38,7 +38,7 @@ export function ContactForm() {
             <input
               id="company"
               name="company"
-              className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-slate-900"
+              className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-primary)]"
               placeholder="Your Company Name"
             />
           </div>
@@ -56,7 +56,7 @@ export function ContactForm() {
               name="email"
               type="email"
               required
-              className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-slate-900"
+              className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-primary)]"
               placeholder="you@company.com"
             />
           </div>
@@ -70,7 +70,7 @@ export function ContactForm() {
             <input
               id="phone"
               name="phone"
-              className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-slate-900"
+              className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-primary)]"
               placeholder="+91-00000-00000"
             />
           </div>
@@ -85,7 +85,7 @@ export function ContactForm() {
           <select
             id="service"
             name="service"
-            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-slate-900"
+            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-primary)]"
             defaultValue=""
           >
             <option value="" disabled>
@@ -114,13 +114,13 @@ export function ContactForm() {
             id="message"
             name="message"
             rows={4}
-            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-slate-900"
+            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-primary)]"
             placeholder="Share a short note on your current setup, challenges, and what you are looking for."
           />
         </div>
         <button
           type="submit"
-          className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+          className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-primary)] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--color-accent)]"
         >
           Submit Enquiry
         </button>
