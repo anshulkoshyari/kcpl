@@ -9,53 +9,63 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    title: "Financial and Management Accounting Services",
+    title: "Financial & Management Accounting",
     description:
-      "Comprehensive accounting support designed for growing startups and complex MNC structures.",
+      "Robust books of account, management reporting, and actionable financial insights for busy founders and CFOs.",
     items: [
-      "Day-to-day accounting and bookkeeping",
-      "Finalisation of accounts and financial reporting",
-      "Management accounting and analytical reviews",
+      "Day to day bookkeeping and accounting",
+      "Month end and year end closing support",
+      "Management reporting and analytics",
     ],
   },
   {
-    title: "Budgetary Management and MIS Reporting",
+    title: "Business Setup and Secretarial Compliance",
     description:
-      "Forward-looking budgets, forecasts, and MIS packs for better visibility and control.",
+      "Complete support for company formation, registration, and ongoing secretarial compliance to keep your business legally compliant.",
     items: [
-      "Budget preparation and revisions",
-      "Variance analysis and scenario planning",
-      "Board-ready MIS reports and dashboards",
+      "Company formation and registration",
+      "Secretarial compliance and filings",
+      "Board meetings and corporate governance",
     ],
   },
   {
-    title: "Audit Assistance and Support",
+    title: "Compliance, HR & Payroll",
     description:
-      "End-to-end assistance for statutory, internal, and group audits.",
+      "Company secretary, HR, and payroll compliance handled seamlessly by a specialized team.",
     items: [
-      "Preparing audit schedules and reconciliations",
-      "Responding to auditor queries",
-      "Supporting local and global audit requirements",
+      "Company secretary compliance services",
+      "Payroll processing and statutory filings",
+      "Support with HR and employee lifecycle data",
     ],
   },
   {
-    title: "Company Secretary Compliance Services",
+    title: "Management Consulting",
     description:
-      "Secretarial support for entity formation, governance, and recurring compliances.",
+      "Strategic advisory services to help businesses optimize operations, improve performance, and achieve growth objectives.",
     items: [
-      "Formation and registration of new companies",
-      "ROC and other statutory filings",
-      "Board and shareholder meeting documentation",
+      "Strategic planning and business advisory",
+      "Process optimization and efficiency improvement",
+      "Financial modeling and business analysis",
     ],
   },
   {
-    title: "HR and Payroll Services",
+    title: "IT Services",
     description:
-      "End-to-end payroll processing and HR data support, including statutory compliance.",
+      "Comprehensive IT solutions and technology services to support your business operations and digital transformation.",
     items: [
-      "Payroll processing and payslip generation",
-      "PF/ESI and other statutory compliances",
-      "TDS on salaries and related filings",
+      "IT infrastructure setup and management",
+      "Software implementation and support",
+      "Cybersecurity and data protection",
+    ],
+  },
+  {
+    title: "ISO Certification",
+    description:
+      "Expert guidance and support for ISO certification processes to enhance your business quality standards and credibility.",
+    items: [
+      "ISO certification consulting and preparation",
+      "Quality management system implementation",
+      "Audit support and compliance documentation",
     ],
   },
 ];
@@ -67,15 +77,15 @@ export default function ServicesPage() {
         <header className="max-w-3xl space-y-3 text-sm text-slate-700">
           <h1 className="text-2xl font-semibold text-slate-900">Our Services</h1>
           <p>
-            We provide end-to-end outsourcing services to clients, local and
+            We provide end to end outsourcing services to clients, local and
             global. Our comprehensive, customised offerings are designed to
             operate as your virtual CFO and accounts department, freeing your
             teams to focus on growth.
           </p>
           <p>
             Our core service lines span financial and management accounting,
-            budgeting and MIS, audit assistance, company secretary compliance,
-            and HR &amp; payroll services including statutory compliances.
+            business setup and secretarial compliance, HR &amp; payroll services,
+            management consulting, IT services and ISO certification support.
           </p>
         </header>
 

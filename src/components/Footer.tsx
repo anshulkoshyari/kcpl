@@ -1,98 +1,129 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  const handleServicesLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/services") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
   return (
-    <footer className="border-t border-slate-200 bg-slate-50">
-      <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-12">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div className="space-y-3 md:col-span-2">
-            <h3 className="text-sm font-semibold text-slate-900">
-              Koshyari Consultants Pvt. Ltd.
-            </h3>
-            <p className="text-sm text-slate-600">
-              Placeholder description for Your Company Name. Replace this text
-              with a short summary of your Virtual CFO, accounting, and
-              outsourcing services.
-            </p>
-            <p className="text-sm text-slate-500">
-              Registered address: Your Office Address, City, State, Country,
-              PIN/ZIP.
-            </p>
+    <footer className="bg-[var(--color-brand-bg)]">
+      <div className="mx-auto max-w-screen-2xl px-4 md:px-6">
+        <div className="h-px bg-[var(--color-brand-border)]"></div>
+      </div>
+      <div className="mx-auto max-w-screen-2xl px-4 py-10 md:px-6 md:py-12">
+        {/* Top Section: Logo on left, Navigation columns on right */}
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          {/* Brand Logo and Name */}
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-md bg-[var(--color-primary)] text-xs font-semibold text-white flex items-center justify-center">
+              KCPL
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-semibold text-[var(--color-primary)]">
+                Koshyari Consultants Pvt. Ltd.
+              </span>
+            </div>
           </div>
 
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Quick Links
+          {/* Navigation Links Section */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="flex flex-col">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-4">
+              About Us
             </h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+            <ul className="space-y-3 text-sm text-slate-600">
               <li>
-                <Link href="/" className="hover:text-slate-900">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-slate-900">
+                <Link href="/about" className="hover:text-[var(--color-primary)] transition-colors">
                   About Us
                 </Link>
               </li>
-              <li>
-                <Link href="/services" className="hover:text-slate-900">
-                  Services
+            </ul>
+          </div>
+
+          <div className="flex flex-col">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-4">
+              Services
+            </h4>
+            <ul className="space-y-3 text-sm text-slate-600">
+            <li>
+                <Link href="/services" onClick={handleServicesLinkClick} className="hover:text-[var(--color-primary)] transition-colors">
+                Financial and Management Accounting Services
                 </Link>
               </li>
               <li>
-                <Link href="/insights" className="hover:text-slate-900">
+                <Link href="/services" onClick={handleServicesLinkClick} className="hover:text-[var(--color-primary)] transition-colors">
+                  Business Setup and Secretarial Compliance
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" onClick={handleServicesLinkClick} className="hover:text-[var(--color-primary)] transition-colors">
+                  Payroll Management
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" onClick={handleServicesLinkClick} className="hover:text-[var(--color-primary)] transition-colors">
+                  Management Consulting
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" onClick={handleServicesLinkClick} className="hover:text-[var(--color-primary)] transition-colors">
+                  IT Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" onClick={handleServicesLinkClick} className="hover:text-[var(--color-primary)] transition-colors">
+                  ISO Certification
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-4">
+              Resources
+            </h4>
+            <ul className="space-y-3 text-sm text-slate-600">
+              <li>
+                <Link href="/insights" className="hover:text-[var(--color-primary)] transition-colors">
                   Insights
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-3 text-sm text-slate-600">
               <li>
-                <Link href="/contact" className="hover:text-slate-900">
-                  Enquiry
+                <Link href="/privacy-policy" className="hover:text-[var(--color-primary)] transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/disclaimer" className="hover:text-[var(--color-primary)] transition-colors">
+                  Disclaimer
                 </Link>
               </li>
             </ul>
           </div>
-
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Contact
-            </h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
-              <li>
-                Email:{" "}
-                <a
-                  href="mailto:contact@yourcompany.com"
-                  className="hover:text-slate-900"
-                >
-                  contact@yourcompany.com
-                </a>
-              </li>
-              <li>
-                Phone:{" "}
-                <a
-                  href="tel:+910000000000"
-                  className="hover:text-slate-900"
-                >
-                  +91-00000-00000
-                </a>
-              </li>
-              <li>Alternate email: info@yourcompany.com</li>
-            </ul>
-          </div>
+        </div>
         </div>
 
-        <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-slate-200 pt-4 text-xs text-slate-500 md:flex-row md:items-center">
+        <div className="my-8 h-px bg-[var(--color-brand-border)]"></div>
+
+        <div className="mt-8 text-xs text-slate-500">
           <p>
             © 2025 Koshyari Consultants Pvt. Ltd. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/privacy-policy" className="hover:text-slate-900">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-slate-900">
-              Terms &amp; Conditions
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

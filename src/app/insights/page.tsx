@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function InsightsPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-white flex-1 w-full">
       <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
         <header className="max-w-3xl space-y-3 text-sm text-slate-700">
           <h1 className="text-2xl font-semibold text-slate-900">Insights</h1>
