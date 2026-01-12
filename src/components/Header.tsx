@@ -23,14 +23,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-brand-border)] bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8 lg:px-12">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1 md:px-8 lg:px-12">
         <Link href="/" onClick={handleLogoClick} className="flex items-center">
           <Image
             src="/kc-logo-text.png"
             alt="Koshyari Consultants Pvt. Ltd."
-            width={300}
-            height={60}
-            className="h-10 w-auto"
+            width={600}
+            height={120}
+            className="h-16 w-auto"
             priority
           />
         </Link>
