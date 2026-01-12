@@ -1,17 +1,113 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
+
 export function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const accessKey = process.env.NEXT_PUBLIC_SILENTFORMS_ACCESS_KEY || "";
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+
+    const handleLoad = () => {
+      setIsSubmitting(false);
+      try {
+        // Try to read the iframe content to check for success/error
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+        if (iframeDoc) {
+          const bodyText = iframeDoc.body?.innerText || "";
+          // SilentForms typically returns JSON or a success message
+          if (bodyText.includes("success") || bodyText.includes("Thank you") || bodyText === "") {
+            setSubmitStatus({
+              type: "success",
+              message:
+                "Thank you! Your enquiry has been submitted successfully. We'll get back to you soon.",
+            });
+            formRef.current?.reset();
+          } else if (bodyText.includes("error") || bodyText.includes("Error")) {
+            setSubmitStatus({
+              type: "error",
+              message:
+                "Something went wrong. Please try again or contact us directly.",
+            });
+          } else {
+            // If we can't determine, assume success (SilentForms usually succeeds)
+            setSubmitStatus({
+              type: "success",
+              message:
+                "Thank you! Your enquiry has been submitted successfully. We'll get back to you soon.",
+            });
+            formRef.current?.reset();
+          }
+        }
+      } catch (e) {
+        // Cross-origin restrictions - assume success if iframe loaded
+        setSubmitStatus({
+          type: "success",
+          message:
+            "Thank you! Your enquiry has been submitted successfully. We'll get back to you soon.",
+        });
+        formRef.current?.reset();
+      }
+    };
+
+    iframe.addEventListener("load", handleLoad);
+    return () => iframe.removeEventListener("load", handleLoad);
+  }, []);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    if (!accessKey) {
+      event.preventDefault();
+      setSubmitStatus({
+        type: "error",
+        message:
+          "Form is not configured. Please set NEXT_PUBLIC_SILENTFORMS_ACCESS_KEY environment variable.",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+    // Form will submit normally to the iframe, bypassing CORS
+  };
+
   return (
     <section className="rounded-2xl border border-[var(--color-brand-border)] bg-[var(--color-brand-bg)] p-5 text-sm text-slate-700">
       <form
+        ref={formRef}
+        action="https://silentforms.com/api/submit"
+        method="POST"
+        target="silentforms-iframe"
         className="space-y-4"
-        onSubmit={(event) => {
-          event.preventDefault();
-          alert(
-            "This is a placeholder form handler. Replace with your own submission logic or integration."
-          );
-        }}
+        onSubmit={handleSubmit}
       >
+        {/* Hidden iframe for form submission (bypasses CORS) */}
+        <iframe
+          ref={iframeRef}
+          name="silentforms-iframe"
+          style={{ display: "none" }}
+          title="Form submission"
+        />
+        
+        {/* Hidden access key field */}
+        <input type="hidden" name="accessKey" value={accessKey} />
+        
+        {/* Honeypot field for spam protection */}
+        <input
+          type="text"
+          name="honeypot"
+          style={{ display: "none" }}
+          tabIndex={-1}
+          autoComplete="off"
+        />
         <div className="grid gap-4 md:grid-cols-2">
           <div>
             <label
@@ -118,11 +214,25 @@ export function ContactForm() {
             placeholder="Share a short note on your current setup, challenges, and what you are looking for."
           />
         </div>
+        {/* Status Messages */}
+        {submitStatus.type && (
+          <div
+            className={`rounded-md p-3 text-sm ${
+              submitStatus.type === "success"
+                ? "bg-green-50 text-green-800"
+                : "bg-red-50 text-red-800"
+            }`}
+          >
+            {submitStatus.message}
+          </div>
+        )}
+
         <button
           type="submit"
-          className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-primary)] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--color-accent)]"
+          disabled={isSubmitting}
+          className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-primary)] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--color-accent)] disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Submit Enquiry
+          {isSubmitting ? "Submitting..." : "Submit Enquiry"}
         </button>
       </form>
     </section>

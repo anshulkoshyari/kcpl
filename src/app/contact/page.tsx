@@ -30,16 +30,16 @@ export default function ContactPage() {
             <p>
               Email:{" "}
               <a
-                href="mailto:contact@yourcompany.com"
+                href="mailto:support@koshyari.com"
                 className="font-semibold text-[var(--color-primary)] underline hover:text-[var(--color-accent)] transition-colors"
               >
-                kamla@koshyari.com
+                support@koshyari.com
               </a>
             </p>
             <p>
               Phone:{" "}
               <a
-                href="tel:+910000000000"
+                href="tel:+919869236515"
                 className="font-semibold text-[var(--color-primary)] underline hover:text-[var(--color-accent)] transition-colors"
               >
                 +91-9869236515

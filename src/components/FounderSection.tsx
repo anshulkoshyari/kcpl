@@ -7,14 +7,14 @@ export default function FounderSection() {
       <div className="mx-auto max-w-4xl px-4 md:px-6">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12 md:justify-center">
           {/* Portrait Image */}
-          <div className="flex-shrink-0 md:w-64">
+          <div className="flex-shrink-0 md:w-48">
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-slate-200 shadow-sm">
               <Image
                 src="/founder.jpg"
                 alt="Mrs. Kamla Singh, Associate Chartered Accountant and Founder"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 256px"
+                sizes="(max-width: 768px) 100vw, 192px"
                 priority
               />
             </div>
