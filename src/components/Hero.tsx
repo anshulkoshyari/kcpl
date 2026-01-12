@@ -48,7 +48,7 @@ export function Hero() {
           </div>
           <div className="grid gap-3 text-xs md:grid-cols-3">
             <div className="rounded-xl border border-[var(--color-primary-dark)] bg-[var(--color-primary-dark)]/40 p-3">
-              <p className="text-2xl font-semibold">1000+</p>
+              <p className="text-2xl font-semibold">500+</p>
               <p className="mt-1 text-[var(--color-primary-lighter)]/80">
                 Clients served (local and global)
               </p>
@@ -71,4 +71,3 @@ export function Hero() {
     </section>
   );
 }
-

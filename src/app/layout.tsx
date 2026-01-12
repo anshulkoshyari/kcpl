@@ -15,9 +15,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Company Name – Virtual CFO & Accounting Outsourcing",
+  title: "Koshyari Consultants Pvt. Ltd. – Virtual CFO & Allied Services",
   description:
-    "Your short description about Virtual CFO and accounting outsourcing services. Replace this with your SEO-optimized summary.",
+    "Koshyari Consultants Pvt. Ltd. – Expert Virtual CFO, accounting, tax compliance & company secretarial services in Mumbai. Trusted financial solutions for startups, SMEs & MNCs.",
+  icons: {
+    icon: "/kc-logo.png",
+    shortcut: "/kc-logo.png",
+    apple: "/kc-logo.png",
+  },
 };
 
 export default function RootLayout({

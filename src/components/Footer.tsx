@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export function Footer() {
@@ -21,19 +22,18 @@ export function Footer() {
         {/* Top Section: Logo on left, Navigation columns on right */}
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           {/* Brand Logo and Name */}
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-md bg-[var(--color-primary)] text-xs font-semibold text-white flex items-center justify-center">
-              KCPL
-            </div>
-            <div className="flex flex-col">
-              <span className="text-sm font-semibold text-[var(--color-primary)]">
-                Koshyari Consultants Pvt. Ltd.
-              </span>
-            </div>
+          <div className="flex items-center">
+            <Image
+              src="/kc-logo-text.png"
+              alt="Koshyari Consultants Pvt. Ltd."
+              width={600}
+              height={60}
+              className="h-14 w-auto"
+            />
           </div>
 
           {/* Navigation Links Section */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="flex flex-wrap gap-8 sm:justify-end">
           <div className="flex flex-col">
             <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-4">
               About Us
@@ -80,19 +80,6 @@ export function Footer() {
               <li>
                 <Link href="/services" onClick={handleServicesLinkClick} className="hover:text-[var(--color-primary)] transition-colors">
                   ISO Certification
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col">
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-4">
-              Resources
-            </h4>
-            <ul className="space-y-3 text-sm text-slate-600">
-              <li>
-                <Link href="/insights" className="hover:text-[var(--color-primary)] transition-colors">
-                  Insights
                 </Link>
               </li>
             </ul>

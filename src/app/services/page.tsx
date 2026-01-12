@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ServiceCard } from "@/components/ServiceCard";
 
 export const metadata: Metadata = {
-  title: "Services – Your Company Name",
+  title: "Services – Koshyari Consultants Pvt. Ltd.",
   description:
-    "Explore virtual CFO, accounting, budgeting, audit assistance, company secretary, and HR & payroll outsourcing services.",
+    "Koshyari Consultants Pvt. Ltd. – Expert Virtual CFO, accounting, tax compliance & company secretarial services in Mumbai. Trusted financial solutions for startups, SMEs & MNCs.",
 };
 
 const services = [

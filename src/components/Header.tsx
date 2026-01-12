@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navItems = [
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/insights", label: "Resources" },
+  { href: "/services", label: "Services" }
 ];
 
 export function Header() {
@@ -24,19 +24,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-brand-border)] bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8 lg:px-12">
-        <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-md bg-[var(--color-primary)] text-xs font-semibold text-white flex items-center justify-center">
-            {/* Placeholder logo initials */}
-            YC
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold text-[var(--color-primary)]">
-              Koshyari Consultants Pvt. Ltd.
-            </span>
-            <span className="text-xs text-slate-500">
-              Your Virtual CFO
-            </span>
-          </div>
+        <Link href="/" onClick={handleLogoClick} className="flex items-center">
+          <Image
+            src="/kc-logo-text.png"
+            alt="Koshyari Consultants Pvt. Ltd."
+            width={300}
+            height={60}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         <div className="flex items-center gap-10">

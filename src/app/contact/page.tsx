@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact – Your Company Name",
+  title: "Contact – Koshyari Consultants Pvt. Ltd.",
   description:
-    "Get in touch with Your Company Name to discuss virtual CFO, accounting, and outsourcing services for your organisation.",
+    "Get in touch with Koshyari Consultants Pvt. Ltd. to discuss virtual CFO, accounting, and outsourcing services for your organisation.",
 };
 
 export default function ContactPage() {
@@ -33,7 +33,7 @@ export default function ContactPage() {
                 href="mailto:contact@yourcompany.com"
                 className="font-semibold text-[var(--color-primary)] underline hover:text-[var(--color-accent)] transition-colors"
               >
-                kamla@kcpl.com
+                kamla@koshyari.com
               </a>
             </p>
             <p>

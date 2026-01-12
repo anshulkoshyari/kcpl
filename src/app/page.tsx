@@ -5,9 +5,9 @@ import { StatsStrip } from "@/components/StatsStrip";
 import { ServiceCard } from "@/components/ServiceCard";
 
 export const metadata: Metadata = {
-  title: "Your Company Name – Virtual CFO & Accounting Outsourcing",
+  title: "Koshyari Consultants Pvt. Ltd. – Virtual CFO & Allied Services",
   description:
-    "Virtual CFO for startups and MNCs. We provide end-to-end finance, compliance, and staffing solutions through onshore and offshore models.",
+    "Koshyari Consultants Pvt. Ltd. – Expert Virtual CFO, accounting, tax compliance & company secretarial services in Mumbai. Trusted financial solutions for startups, SMEs & MNCs.",
 };
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
           <div className="grid gap-10 md:grid-cols-[2fr,3fr] md:items-start">
             <div className="space-y-4 text-sm text-slate-700">
               <h2 className="text-xl font-semibold text-[var(--color-primary)]">
-                End to End Virtual CFO &amp; Accounting Support
+                End to End Virtual CFO & Allied Services
               </h2>
               <p>
                 With start ups and multinational corporations growing, there is

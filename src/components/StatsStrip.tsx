@@ -10,7 +10,7 @@ export function StatsStrip() {
             }}
           >
             <p className="text-lg font-bold text-white">
-              1000+ clients across 20+ countries
+              500+ clients across 10+ countries
             </p>
             <p className="mt-1 text-sm text-blue-100">
               We have served clients across various industries and geographies.
@@ -47,5 +47,3 @@ export function StatsStrip() {
     </section>
   );
 }
-
-
