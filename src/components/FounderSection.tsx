@@ -44,7 +44,7 @@ export default function FounderSection() {
               </p>
 
               <p>
-                Known for her proactive approach, perseverance, client-centric attitude, and strong relationship management, she has successfully managed and transitioned projects across India, including non-Mumbai clients. Her portfolio includes major clients such as Brookfield Group, Estire Research and Analytics India Pvt Ltd, Embarcadero Technologies India Pvt Ltd, Symbol Technologies India Pvt Ltd, and Helpshift Technologies Pvt Ltd.
+                Known for her proactive approach, perseverance, client-centric attitude, and strong relationship management, she has successfully managed and transitioned projects across India, including non-Mumbai clients.
               </p>
             </div>
 
