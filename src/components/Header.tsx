@@ -30,7 +30,7 @@ export function Header() {
             alt="Koshyari Consultants Pvt. Ltd."
             width={600}
             height={120}
-            className="h-16 w-auto"
+            className="h-22 w-auto"
             priority
           />
         </Link>

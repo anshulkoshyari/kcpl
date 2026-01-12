@@ -28,7 +28,7 @@ export function Footer() {
               alt="Koshyari Consultants Pvt. Ltd."
               width={600}
               height={60}
-              className="h-44 w-auto"
+              className="h-56 w-auto"
             />
           </div>
 
